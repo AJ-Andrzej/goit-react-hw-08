@@ -1,0 +1,21 @@
+.card{
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+.list{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    width: 1230px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}

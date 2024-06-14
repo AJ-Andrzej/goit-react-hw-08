@@ -1,0 +1,29 @@
+.wrapper{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+    width: 350px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.fileld{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.btn{
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.label{
+    font-size: 18px;
+    font-weight: 500;
+}
+.error{
+    color: red;
+}

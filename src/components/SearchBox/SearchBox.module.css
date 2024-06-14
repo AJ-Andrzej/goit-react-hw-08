@@ -1,0 +1,18 @@
+.box{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+.wrapper{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.field{
+    width: 350px;
+    padding: 5px 15px 5px 15px;
+}
+.lable{
+    font-weight: 600;
+}

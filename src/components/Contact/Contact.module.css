@@ -1,0 +1,12 @@
+.btn{
+    height: 40px;
+}
+.info{
+    display: flex;
+    gap: 10px
+}
+.infoWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
