@@ -9,7 +9,7 @@
 .link {
     text-decoration: none;
     color: black;
-    transition: color 200ms ease-in-out, transform 200ms ease-in-out;;
+    transition: color 200ms ease-in-out, transform 200ms ease-in-out;
 }
 
 .acitve {

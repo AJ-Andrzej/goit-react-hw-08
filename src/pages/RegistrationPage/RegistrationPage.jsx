@@ -1,3 +1,4 @@
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm';
 export default function RegistrationPage() {
-  return <p>RegistrationPage</p>;
+  return <RegistrationForm />;
 }

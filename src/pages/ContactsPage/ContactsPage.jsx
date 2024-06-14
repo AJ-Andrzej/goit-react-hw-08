@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { selectLoading, selectError } from '../../redux/contactsSlice';
 import { fetchContacts } from '../../redux/contactsOps';
+import css from './ContactsPage.module.css';
 import ContactForm from '../../components/ContactForm/ContactForm';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import ContactList from '../../components/ContactList/ContactList';
@@ -19,8 +20,7 @@ export default function ContactPage() {
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={css.wrapper}>
       <ContactForm />
       <SearchBox />
       {isLoading && <Loader />}
