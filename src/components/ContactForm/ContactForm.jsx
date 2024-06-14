@@ -3,7 +3,7 @@ import { useId } from 'react';
 import * as Yup from 'yup';
 import css from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/contactsOps';
+import { addContact } from '../../redux/contacts/operations';
 
 const phoneSchema = '[0-9]{3}-[0-9]{2}-[0-9]{2}';
 const contactsSchema = Yup.object().shape({

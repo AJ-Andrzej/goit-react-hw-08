@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useId } from 'react';
-import { logIn } from '../../redux/auth/authOps';
+import { logIn } from '../../redux/auth/operations';
 import * as Yup from 'yup';
 import css from './LoginForm.module.css';
 import { useDispatch } from 'react-redux';
