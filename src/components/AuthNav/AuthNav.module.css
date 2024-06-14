@@ -1,0 +1,23 @@
+.navigation {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 30px;
+
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    transition: color 200ms ease-in-out, transform 200ms ease-in-out;
+    ;
+}
+
+.acitve {
+    color: orange
+}
+
+.link:hover {
+    color: rgb(248, 178, 47);
+    transform: scale(1.1)
+}

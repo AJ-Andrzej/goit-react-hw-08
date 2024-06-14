@@ -1,35 +1,26 @@
-import ContactList from '../ContactList/ContactList'
-import SearchBox from '../SearchBox/SearchBox'
-import ContactForm from '../ContactForm/ContactForm'
-import Loader from '../Loader/Loader'
-import ErrorMessage from '../ErrorMessage/ErrorMessage'
-import css from './App.module.css'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchContacts } from '../../redux/contactsOps'
-import { selectLoading, selectError } from '../../redux/contactsSlice'
+// import { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import Layout from '../Layout/Layout';
 
-
-
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+const ContactPage = lazy(() => import('../../pages/ContactsPage/ContactsPage'));
+const RegistrationPage = lazy(() =>
+  import('../../pages/RegistrationPage/RegistrationPage')
+);
+const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage'));
 export default function App() {
-        
-    const dispatch = useDispatch()
-    const isLoading = useSelector(selectLoading)
-    const isError = useSelector(selectError)
-
-   
-    useEffect(() => {
-              dispatch(fetchContacts())             
-        }, [dispatch]);
-    return (
-        <div>
-            <h1 className={css.title}>Phonebook</h1>
-            <ContactForm/>
-            <SearchBox />
-            {isLoading && <Loader />}
-            {isError && <ErrorMessage />}
-            
-            <ContactList/>
-        </div>
-    )
+  return (
+    <Layout>
+      <Suspense fallback={<div>Loading page...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactPage />} />
+        </Routes>
+      </Suspense>
+    </Layout>
+  );
 }
