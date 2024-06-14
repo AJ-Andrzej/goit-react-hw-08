@@ -1,7 +1,8 @@
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './contactsOps';
-import { selectFilter } from './filtersSlice';
-
+import { selectFilter } from '../filters/filtresSelectors';
+import { selectContacts } from './contactsSelectors';
+import { logOut } from '../auth/authOps';
 const handlePending = state => {
   state.loading = true;
   state.error = null;
@@ -40,13 +41,14 @@ const slice = createSlice({
         );
         state.loading = false;
       })
-      .addCase(deleteContact.rejected, handleRejected);
+      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(logOut.fulfilled, state => {
+        state.items = [];
+        state.loading = false;
+        state.error = null;
+      });
   },
 });
-
-export const selectContacts = state => state.contacts.items;
-export const selectLoading = state => state.contacts.loading;
-export const selectError = state => state.contacts.error;
 
 export const selectVisibleContacts = createSelector(
   [selectContacts, selectFilter],

@@ -1,21 +1,24 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useId } from 'react';
+import { logIn } from '../../redux/auth/authOps';
 import * as Yup from 'yup';
 import css from './LoginForm.module.css';
+import { useDispatch } from 'react-redux';
 
 const registrationSchema = Yup.object().shape({
   email: Yup.string()
     .email('must be a valid email')
     .required('This field is required'),
   password: Yup.string()
-    .min(7, 'Too short! Min 30 symbols')
+    .min(7, 'Too short! Min 7 symbols')
     .required('This field is required'),
 });
 
 export default function LoginForm() {
+  const dispath = useDispatch();
   const fieldId = useId();
   const handleSubmit = (values, actions) => {
-    console.log(values);
+    dispath(logIn(values));
     actions.resetForm();
   };
 
